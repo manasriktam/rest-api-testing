@@ -1,1 +1,11 @@
 # Rest API Testing API
+
+# Create a .env file
+PORT=3000
+DATABASE_URL=mongodb://localhost:27017/users
+
+# Run mongodb container
+docker run -d --name mongodb -p 27017:27017 mongo:latest
+
+# Start the dev server
+npn run dev
