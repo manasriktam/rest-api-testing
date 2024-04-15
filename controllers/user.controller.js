@@ -20,8 +20,8 @@ const userGetController = async (req, res) => {
   try {
     await connectDB();
     const userId = req.params.id;
-    const userFound = await User.findById({ _id: userId });
-    if (!userFound) {
+    const userFound = await User.find({ _id: userId });
+    if (userFound.length == 0) {
       return res.status(404).json({ message: "User not found!!" });
     }
     return res
